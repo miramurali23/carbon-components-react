@@ -11,7 +11,7 @@ const propTypes = {
   onChange: PropTypes.func,
   onClick: PropTypes.func,
   placeholder: PropTypes.string,
-  type: PropTypes.string,
+  type: PropTypes.number,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   hideLabel: PropTypes.bool,
   invalid: PropTypes.bool,
@@ -77,7 +77,7 @@ const TextInput = ({
 
   const input = invalid
     ? <input {...other} {...textInputProps} data-invalid className={textInputClasses} />
-    : <input {...other} {...textInputProps} className={textInputClasses} />;
+    : <input type="number" pattern="[0-9]*" {...other} {...textInputProps} className={textInputClasses} />;
 
   return (
     <div className="bx--form-item">
